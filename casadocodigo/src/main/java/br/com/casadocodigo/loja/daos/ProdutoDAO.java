@@ -6,6 +6,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import java.util.List;
 
 @Repository
 @Transactional
@@ -16,5 +18,8 @@ public class ProdutoDAO {
 
     public void save(Produto produto) {
         manager.persist(produto);
+    }
+
+    public void findALl(){
     }
 }
