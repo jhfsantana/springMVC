@@ -5,16 +5,5 @@
 </head>
 <body>
     <h1>Casa do Codigo</h1>
-
-<table>
-    <tr>
-        <td>Titulo</td>
-        <td>Descricao</td>
-    </tr>
-    <tr>
-        <td>Java 8 na Pratica</td>
-        <td>Desenvolvimento PHP</td>
-    </tr>
-</table>
 </body>
 </html>

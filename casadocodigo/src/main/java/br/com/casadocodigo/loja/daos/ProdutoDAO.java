@@ -6,7 +6,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import java.util.List;
 
 @Repository
@@ -20,6 +19,7 @@ public class ProdutoDAO {
         manager.persist(produto);
     }
 
-    public void findALl(){
+    public List<Produto> findALl(){
+        return manager.createQuery("select p from Produto p",Produto.class).getResultList();
     }
 }
