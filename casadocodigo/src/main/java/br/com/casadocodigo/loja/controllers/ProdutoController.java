@@ -11,6 +11,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
@@ -63,6 +64,16 @@ public class ProdutoController {
         List<Produto> produtos = produtoDAO.findALl();
         ModelAndView modelAndView = new ModelAndView("produtos/list");
         modelAndView.addObject("produtos", produtos);
+
+        return modelAndView;
+    }
+
+    @RequestMapping("/detalhes/{id}")
+    public ModelAndView details(@PathVariable("id") Integer id){
+        Produto produto = produtoDAO.findById(id);
+        System.out.print(produto);
+        ModelAndView modelAndView = new ModelAndView("produtos/details");
+        modelAndView.addObject("produto", produto);
 
         return modelAndView;
     }

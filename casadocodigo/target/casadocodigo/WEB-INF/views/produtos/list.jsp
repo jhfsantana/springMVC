@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="s" uri="http://www.springframework.org/tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: Isabela
@@ -21,7 +22,7 @@
         </tr>
         <c:forEach items="${ produtos }" var="produto">
             <tr>
-                <td> ${produto.titulo} </td>
+                <td> <a href="${s:mvcUrl('PC#details').arg(0, produto.id).build()}">${produto.titulo}</a> </td>
                 <td> ${produto.descricao} </td>
                 <td> ${produto.paginas} </td>
             </tr>
