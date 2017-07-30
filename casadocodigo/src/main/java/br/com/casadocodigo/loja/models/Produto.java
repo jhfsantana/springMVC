@@ -1,6 +1,9 @@
 package br.com.casadocodigo.loja.models;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
+import java.util.Calendar;
 import java.util.List;
 
 @Entity
@@ -11,6 +14,9 @@ public class Produto {
     private String titulo;
     private String descricao;
     private int paginas;
+    private String sumarioPath;
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    private Calendar dataLancamento;
 
     @ElementCollection
     private List<Preco> precos;
@@ -53,6 +59,22 @@ public class Produto {
 
     public void setPrecos(List<Preco> precos) {
         this.precos = precos;
+    }
+
+    public Calendar getDataLancamento() {
+        return dataLancamento;
+    }
+
+    public void setDataLancamento(Calendar dataLancamento) {
+        this.dataLancamento = dataLancamento;
+    }
+
+    public String getSumarioPath() {
+        return sumarioPath;
+    }
+
+    public void setSumarioPath(String sumarioPath) {
+        this.sumarioPath = sumarioPath;
     }
 
     @Override
