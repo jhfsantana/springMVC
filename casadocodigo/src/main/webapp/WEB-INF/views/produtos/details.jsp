@@ -1,3 +1,7 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
 <!doctype html>
 <html lang="pt-BR">
 <head>
@@ -10,7 +14,7 @@
 
 	
 
-<title>Livro de Apis Node.js - Casa do Código</title>
+<title>${ produto.titulo }</title>
 
 
 	<meta property="og:site_name" content="casadocodigo.com.br"/>
@@ -88,188 +92,7 @@ var __st={"a":1557645,"offset":-10800,"reqid":"cc2df80b-5c01-49e6-8e78-bece1a08d
 </script><script src="https://cdn.shopify.com/s/javascripts/shopify_stats.js?v=6" type="text/javascript" async="async"></script>
 <meta id="shopify-digital-wallet" name="shopify-digital-wallet" content="/1557645/digital_wallets/dialog" />
 <script src="//cdn.shopify.com/s/assets/themes_support/ga_urchin_forms-68ca1924c495cfc55dac65f4853e0c9a395387ffedc8fe58e0f2e677f95d7f23.js" defer="defer"></script>
-      <script type="text/javascript">
-        
-      window.ShopifyAnalytics = window.ShopifyAnalytics || {};
-      window.ShopifyAnalytics.meta = window.ShopifyAnalytics.meta || {};
-      window.ShopifyAnalytics.meta.currency = 'BRL';
-      var meta = {"product":{"id":4117127943,"vendor":"Caio Ribeiro Pereira","type":"Livro","variants":[{"id":14126040583,"price":2990,"name":"Construindo APIs REST com Node.js - E-book","public_title":"E-book","sku":"ebook-apisnodejs"},{"id":14126040647,"price":6990,"name":"Construindo APIs REST com Node.js - Impresso","public_title":"Impresso","sku":"impresso-apisnodejs"},{"id":14126040711,"price":7990,"name":"Construindo APIs REST com Node.js - E-book + Impresso","public_title":"E-book + Impresso","sku":"combo-apisnodejs"}]},"page":{"pageType":"product","resourceType":"product","resourceId":4117127943}};
-      for (var attr in meta) {
-        window.ShopifyAnalytics.meta[attr] = meta[attr];
-      }
-    
-      </script>
 
-      <script type="text/javascript">
-        window.ShopifyAnalytics.merchantGoogleAnalytics = function() {
-          if (!document.querySelector(".offsite-payment-gateway-logo")) {
-
-document.querySelector('div[data-alternative-payments]').remove();
-
-var input = document.querySelector("#checkout_billing_address_company");
-input.closest("form").addEventListener('submit', function (e) {
-	e.preventDefault();
-	var inputValue = input.value.toString().replace(/[^0-9]/g, "");
-	var valido = false;
-	if (inputValue.match(/^\d{11}$/)) {
-		valido = cpfValido(inputValue);
-	}
-	else if (inputValue.match(/^\d{14}$/)) {
-		valido = cnpjValido(inputValue);
-	}
-	if (valido) {
-		input.parentNode.classList.remove("field--error");
-		var error = document.querySelector("#error-for-cpfCnpj");
-		if (error) error.remove();
-		this.submit();
-	}
-	else {
-		input.parentNode.classList.add("field--error");
-		if (!document.querySelector("#error-for-cpfCnpj")) {
-			var error = document.createElement("p");
-			error.classList.add("field__message");
-			error.classList.add("field__message--error");
-			error.setAttribute("id", "error-for-cpfCnpj");
-			error.innerText = "Por favor, insira um CPF ou CNPJ válido";
-			input.parentNode.appendChild(error);
-		}
-	}
-});
-function cpfValido(t){if(11!=t.length)return!1;var o=/^([0-9])\1{10}$|[^0-9]/;if(t.match(o))return!1;for(var a=t.substring(0,9).split(""),r=0,n=10,s=0;s<a.length;s++)r+=a[s]*n--;for(var i=toCpfDigit(r),s=0;s<a.length;s++)r+=1*a[s];r+=2*i;var m=toCpfDigit(r),u=""+i+(""+m);return u!=t.substring(9,11)?!1:!0}function toCpfDigit(t){var o=t%11;return 2>o?0:11-o}function cnpjValido(t){if(""==t)return!1;if(14!=t.length)return!1;if(t.match(/(\d)\1{13}/))return!1;for(tamanho=t.length-2,numeros=t.substring(0,tamanho),digitos=t.substring(tamanho),soma=0,pos=tamanho-7,i=tamanho;i>=1;i--)soma+=numeros.charAt(tamanho-i)*pos--,2>pos&&(pos=9);if(resultado=2>soma%11?0:11-soma%11,resultado!=digitos.charAt(0))return!1;for(tamanho+=1,numeros=t.substring(0,tamanho),soma=0,pos=tamanho-7,i=tamanho;i>=1;i--)soma+=numeros.charAt(tamanho-i)*pos--,2>pos&&(pos=9);return resultado=2>soma%11?0:11-soma%11,resultado!=digitos.charAt(1)?!1:!0}
-
-}
-        };
-      </script>
-
-      <script type="text/javascript" class="analytics">
-        (window.gaDevIds=window.gaDevIds||[]).push('BwiEti');
-        
-
-        (function () {
-          var customDocumentWrite = function(content) {
-            var jquery = null;
-
-            if (window.jQuery) {
-              jquery = window.jQuery;
-            } else if (window.Checkout && window.Checkout.$) {
-              jquery = window.Checkout.$;
-            }
-
-            if (jquery) {
-              jquery('body').append(content);
-            }
-          };
-
-          var trekkie = window.ShopifyAnalytics.lib = window.trekkie = window.trekkie || [];
-          if (trekkie.integrations) {
-            return;
-          }
-          trekkie.methods = [
-            'identify',
-            'page',
-            'ready',
-            'track',
-            'trackForm',
-            'trackLink'
-          ];
-          trekkie.factory = function(method) {
-            return function() {
-              var args = Array.prototype.slice.call(arguments);
-              args.unshift(method);
-              trekkie.push(args);
-              return trekkie;
-            };
-          };
-          for (var i = 0; i < trekkie.methods.length; i++) {
-            var key = trekkie.methods[i];
-            trekkie[key] = trekkie.factory(key);
-          }
-          trekkie.load = function(config) {
-            trekkie.config = config;
-            var script = document.createElement('script');
-            script.type = 'text/javascript';
-            script.onerror = function(e) {
-              (new Image()).src = '//v.shopify.com/internal_errors/track?error=trekkie_load';
-            };
-            script.async = true;
-            script.src = 'https://cdn.shopify.com/s/javascripts/tricorder/trekkie.storefront.min.js?v=2017.03.29.1';
-            var first = document.getElementsByTagName('script')[0];
-            first.parentNode.insertBefore(script, first);
-          };
-          trekkie.load(
-            {"Trekkie":{"appName":"storefront","development":false,"defaultAttributes":{"shopId":1557645,"isMerchantRequest":null,"themeId":169045514,"themeCityHash":17438226009829025200}},"Performance":{"navigationTimingApiMeasurementsEnabled":true,"navigationTimingApiMeasurementsSampleRate":0.1},"Google Analytics":{"trackingId":"UA-31796081-1","domain":"auto","siteSpeedSampleRate":"10","enhancedEcommerce":true,"doubleClick":true,"includeSearch":true},"Session Attribution":{}}
-          );
-
-          var loaded = false;
-          trekkie.ready(function() {
-            if (loaded) return;
-            loaded = true;
-
-            window.ShopifyAnalytics.lib = window.trekkie;
-            
-      ga('require', 'linker');
-      function addListener(element, type, callback) {
-        if (element.addEventListener) {
-          element.addEventListener(type, callback);
-        }
-        else if (element.attachEvent) {
-          element.attachEvent('on' + type, callback);
-        }
-      }
-      function decorate(event) {
-        event = event || window.event;
-        var target = event.target || event.srcElement;
-        if (target && (target.getAttribute('action') || target.getAttribute('href'))) {
-          ga(function (tracker) {
-            var linkerParam = tracker.get('linkerParam');
-            document.cookie = '_shopify_ga=' + linkerParam + '; ' + 'path=/';
-          });
-        }
-      }
-      addListener(window, 'load', function(){
-        for (var i=0; i < document.forms.length; i++) {
-          var action = document.forms[i].getAttribute('action');
-          if(action && action.indexOf('/cart') >= 0) {
-            addListener(document.forms[i], 'submit', decorate);
-          }
-        }
-        for (var i=0; i < document.links.length; i++) {
-          var href = document.links[i].getAttribute('href');
-          if(href && href.indexOf('/checkout') >= 0) {
-            addListener(document.links[i], 'click', decorate);
-          }
-        }
-      });
-    
-
-            var originalDocumentWrite = document.write;
-            document.write = customDocumentWrite;
-            try { window.ShopifyAnalytics.merchantGoogleAnalytics.call(this); } catch(error) {};
-            document.write = originalDocumentWrite;
-
-            
-        window.ShopifyAnalytics.lib.page(
-          null,
-          {"pageType":"product","resourceType":"product","resourceId":4117127943}
-        );
-      
-            
-        window.ShopifyAnalytics.lib.track(
-          "Viewed Product",
-          {"variantId":14126040583,"productId":4117127943,"name":"Construindo APIs REST com Node.js - E-book","price":"29.90","currency":"BRL","sku":"ebook-apisnodejs","brand":"Caio Ribeiro Pereira","variant":"E-book","category":"Livro","nonInteraction":true}
-        );
-      
-          });
-
-          
-      var eventsListenerScript = document.createElement('script');
-      eventsListenerScript.async = true;
-      eventsListenerScript.src = "//cdn.shopify.com/s/assets/shop_events_listener-4c5801cae3452eff0ededa0ac07d432c1240b78b7e11282cceb3c3213951104b.js";
-      document.getElementsByTagName('head')[0].appendChild(eventsListenerScript);
-    
-        })();
-      </script>
-    
 <meta id="in-context-paypal-metadata" data-merchant-id="7LDYBY8GYBXGU" data-environment="production" data-locale="pt_BR" data-redirect-url="" />
 
 <style media="all">.additional-checkout-button{border:0 !important;border-radius:5px !important;display:inline-block;margin:0 0 10px;padding:0 24px !important;max-width:100%;min-width:150px !important;line-height:44px !important;text-align:center !important}.additional-checkout-button+.additional-checkout-button{margin-left:10px}.additional-checkout-button:last-child{margin-bottom:0}.additional-checkout-button span{font-size:14px !important}.additional-checkout-button img{display:inline-block !important;height:1.3em !important;margin:0 !important;vertical-align:middle !important;width:auto !important}@media (max-width: 500px){.additional-checkout-button{display:block;margin-left:0 !important;padding:0 10px !important;width:100%}}.additional-checkout-button--apple-pay{background-color:#000 !important;color:#fff !important;display:none;font-family:-apple-system, &#39;Helvetica Neue&#39;, sans-serif !important;min-width:150px !important;white-space:nowrap !important}.additional-checkout-button--apple-pay:hover,.additional-checkout-button--apple-pay:active,.additional-checkout-button--apple-pay:visited{color:#fff !important;text-decoration:none !important}.additional-checkout-button--apple-pay .additional-checkout-button__logo{background:-webkit-named-image(apple-pay-logo-white) center center no-repeat !important;background-size:auto 100% !important;display:inline-block !important;vertical-align:middle !important;width:3em !important;height:1.3em !important}@media (max-width: 500px){.additional-checkout-button--apple-pay{display:none}}.additional-checkout-button--paypal-express{background-color:#ffc439 !important}.additional-checkout-button--amazon{background-color:#fad676 !important;position:relative !important}.additional-checkout-button--amazon .additional-checkout-button__logo{-webkit-transform:translateY(4px) !important;transform:translateY(4px) !important}.additional-checkout-button--amazon .alt-payment-list-amazon-button-image{max-height:none !important;opacity:0 !important;position:absolute !important;top:0 !important;left:0 !important;width:100% !important;height:100% !important}.additional-checkout-button-visually-hidden{border:0 !important;clip:rect(0, 0, 0, 0) !important;clip:rect(0 0 0 0) !important;width:1px !important;height:1px !important;margin:-2px !important;overflow:hidden !important;padding:0 !important;position:absolute !important}
@@ -278,18 +101,6 @@ function cpfValido(t){if(11!=t.length)return!1;var o=/^([0-9])\1{10}$|[^0-9]/;if
 	<!-- inject:css -->
 	<link rel="stylesheet" href="//cdn.shopify.com/s/files/1/0155/7645/t/227/assets/style.css?4910820717078552127">
 	<!-- endinject -->
-
-	<!-- TypeKit -->
-	<script>
-	  (function(d) {
-		var config = {
-		  kitId: 'eoo8tyd',
-		  scriptTimeout: 3000,
-		  async: true
-		},
-		h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-	  })(document);
-	</script>
 
 <link rel="canonical" href="https://www.casadocodigo.com.br/products/livro-apis-nodejs">
 </head>
@@ -471,7 +282,7 @@ function cpfValido(t){if(11!=t.length)return!1;var o=/^([0-9])\1{10}$|[^0-9]/;if
 					<path fill="#f8965d" d="M1.66666667,26.9714355 L18.3333333,26.9714355 C19.2533333,26.9714355 20,26.2247689 20,25.3047689 L20,6.97143555 C20,6.05143555 19.2533333,5.30476888 18.3333333,5.30476888 L14.9916667,5.30476888 C14.9516667,2.53643555 12.735,0.30476888 10,0.30476888 C7.265,0.30476888 5.04833333,2.53643555 5.00833333,5.30476888 L1.66666667,5.30476888 C0.746666667,5.30476888 0,6.05143555 0,6.97143555 L0,25.3047689 C0,26.2247689 0.746666667,26.9714355 1.66666667,26.9714355 L1.66666667,26.9714355 Z M12.5,10.3047689 L7.5,10.3047689 C7.04,10.3047689 6.66666667,9.93143555 6.66666667,9.47143555 C6.66666667,9.01143555 7.04,8.63810221 7.5,8.63810221 L12.5,8.63810221 C12.96,8.63810221 13.3333333,9.01143555 13.3333333,9.47143555 C13.3333333,9.93143555 12.96,10.3047689 12.5,10.3047689 L12.5,10.3047689 Z M10,1.97143555 C11.8116667,1.97143555 13.285,3.45976888 13.325,5.30476888 L6.675,5.30476888 C6.715,3.45976888 8.18833333,1.97143555 10,1.97143555 L10,1.97143555 Z"></path>
 					<g>
 						<circle cx="19.5" cy="24.8047689" r="8.5" role="presentation" fill="#FFF"/>
-						<text text-decoration="none" text-anchor="middle" x="19.5" y="30" class="sacola-contador">0</text>
+						<text text-decoration="none" text-anchor="middle" x="19.5" y="30" class="sacola-contador">(${carrinhoCompras.quantidade})</text>
 					</g>
 				 </svg>
 			</a>
@@ -507,15 +318,12 @@ function cpfValido(t){if(11!=t.length)return!1;var o=/^([0-9])\1{10}$|[^0-9]/;if
 	<div class="cabecalhoProdutoLivro-tituloEAutor">
 		<h1 itemprop="name" class="cabecalhoProdutoLivro-titulo">
 			<span class="cabecalhoProdutoLivro-titulo-principal" role="presentation">
-				Construindo APIs REST com Node.js
+				${produto.titulo}
 			</span>
 			<span class="cabecalhoProdutoLivro-titulo-sub" role="presentation">
 				
 			</span>
 		</h1>
-		<span class="cabecalhoProdutoLivro-nomeAutor">
-			Caio Ribeiro Pereira
-		</span>
 	</div>
 	
 
@@ -549,221 +357,67 @@ function cpfValido(t){if(11!=t.length)return!1;var o=/^([0-9])\1{10}$|[^0-9]/;if
 
 </header>
 
-	
-<form action="/cart/add" method="POST" class="adicionarAoCarrinho">
+<form action='<c:url value="/carrinho/add" />' method="POST" class="adicionarAoCarrinho">
 	<ul class="adicionarAoCarrinho-listaOfertas">
-	
-	
-	
-		<li class="adicionarAoCarrinho-oferta" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-			<label class="adicionarAoCarrinho-infosDaOferta" for="product-variant-14126040583">
-				<span class="adicionarAoCarrinho-tipoDaOferta"
-					 role="presentation"
-					 itemprop="category"
-					  itemscope itemtype="http://schema.org/Ebook" 
-					 
-				>
-					<span class="adicionarAoCarrinho-tipoDaOferta-nome">
-						E-book
+		<input type="hidden" name="produtoId" value="${produto.id}" />
+		<c:forEach items="${produto.precos}" var="preco" varStatus="status">
+			<li class="adicionarAoCarrinho-oferta" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+				<label class="adicionarAoCarrinho-infosDaOferta" for="product-variant-14126040711">
+					<span class="adicionarAoCarrinho-tipoDaOferta"
+						 role="presentation"
+						 itemprop="category"
+
+
+					>
+						<span class="adicionarAoCarrinho-tipoDaOferta-nome">
+							${preco.tipo}
+						</span>
+
 					</span>
-					
-					<small class="adicionarAoCarrinho-tipoDaOferta-detalhe">
-						(.pdf, .epub e .mobi)
-					</small>
-					
-				</span>
-				<p class="adicionarAoCarrinho-preco">
-					
-					
-					
-					
-						
-						<small class="adicionarAoCarrinho-preco-promocao">
-							<del class="adicionarAoCarrinho-preco-promocao-valor">R$ 39,90</del> por
-						</small>
-						
-					
-					
-					<span class="adicionarAoCarrinho-preco-valor" itemprop="price">
-						R$ 29,90
-					</span>
-					
-				</p>
-			</label>
-			
-				<button class="adicionarAoCarrinho-botaoComprar" type="submit" name="id" value="14126040583" title="Compre o E-book">
-					Comprar
-				</button>
-			
-		</li>
-	
-	
-	
-		<li class="adicionarAoCarrinho-oferta" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-			<label class="adicionarAoCarrinho-infosDaOferta" for="product-variant-14126040647">
-				<span class="adicionarAoCarrinho-tipoDaOferta"
-					 role="presentation"
-					 itemprop="category"
-					 
-					  itemscope itemtype="http://schema.org/Hardcover" 
-				>
-					<span class="adicionarAoCarrinho-tipoDaOferta-nome">
-						Impresso
-					</span>
-					
-				</span>
-				<p class="adicionarAoCarrinho-preco">
-					
-					
-					
-					
-						
-					
-					
-					<span class="adicionarAoCarrinho-preco-valor" itemprop="price">
-						R$ 69,90
-					</span>
-					
-					<a class="adicionarAoCarrinho-preco-frete" href="https://www.casadocodigo.com.br/pages/fretes" rel="nofollow">
-						+ frete
-					</a>
-					
-				</p>
-			</label>
-			
-				<button class="adicionarAoCarrinho-botaoComprar" type="submit" name="id" value="14126040647" title="Compre o Impresso">
-					Comprar
-				</button>
-			
-		</li>
-	
-	
-	
-		<li class="adicionarAoCarrinho-oferta" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-			<label class="adicionarAoCarrinho-infosDaOferta" for="product-variant-14126040711">
-				<span class="adicionarAoCarrinho-tipoDaOferta"
-					 role="presentation"
-					 itemprop="category"
-					 
-					 
-				>
-					<span class="adicionarAoCarrinho-tipoDaOferta-nome">
-						E-book + Impresso
-					</span>
-					
-				</span>
-				<p class="adicionarAoCarrinho-preco">
-					
-					
-					
-					
-						
-					
-					
-					<span class="adicionarAoCarrinho-preco-valor" itemprop="price">
-						R$ 79,90
-					</span>
-					
-					<a class="adicionarAoCarrinho-preco-frete" href="https://www.casadocodigo.com.br/pages/fretes" rel="nofollow">
-						+ frete
-					</a>
-					
-				</p>
-			</label>
-			
-				<button class="adicionarAoCarrinho-botaoComprar" type="submit" name="id" value="14126040711" title="Compre o E-book + Impresso">
-					Comprar
-				</button>
-			
-		</li>
-	
-	
+					<p class="adicionarAoCarrinho-preco">
+
+						<span class="adicionarAoCarrinho-preco-valor" itemprop="price">
+							R$ ${preco.valor}
+						</span>
+
+						<a class="adicionarAoCarrinho-preco-frete" href="https://www.casadocodigo.com.br/pages/fretes" rel="nofollow">
+							+ frete
+						</a>
+
+					</p>
+				</label>
+
+					<button class="adicionarAoCarrinho-botaoComprar" type="submit" name="id" value="14126040711" title="Compre o E-book + Impresso">
+						Comprar
+					</button>
+
+			</li>
+	</c:forEach>
 	</ul>
 </form>
-<script>
-    (function() {
-    	var buttons = document.getElementsByClassName("adicionarAoCarrinho-botaoComprar");
-        for (var i = 0; i < buttons.length; i++) {
-			buttons[i].addEventListener("click", function() {
-				ga("send", "pageview", "/carrinho/livro-apis-nodejs");
-			});
-        }
-    })();
-</script>
 
-	
+	<br>
+	<br>
+	<br>
 	<section class="conteudoDoLivro infoSection" itemprop="description">
 	<h2 class="infoSection-titulo">
 		Conteúdo
 	</h2>
-	
 
-	
-		
 		
 			<p class="infoSection-texto">
-				Hoje em dia, &#233; muito comum criar aplica&#231;&#245;es client-side para web e mobile que consomem dados de uma API (Application Programming Interface), que s&#227;o sistemas back-end focados apenas no processamento e envio de dados, de forma centralizada. Isso permite que sejam desenvolvidas m&#250;ltiplas aplica&#231;&#245;es clientes com interfaces espec&#237;ficas para usu&#225;rios mobile, desktop ou web. Desde 2010, o Node.js provou ser uma excelente plataforma escal&#225;vel na solu&#231;&#227;o de diversos problemas, principalmente para constru&#231;&#227;o de APIs RESTful.
+				${produto.descricao}
 			</p>
-		
-	
-		
-		
-	
-		
-		
-			<p class="infoSection-texto">
-				
-Neste livro, Caio Ribeiro Pereira mostra na pr&#225;tica os motivos por que optar pelo Node.js, que &#233; uma plataforma altamente escal&#225;vel e de baixo n&#237;vel. Nele, voc&#234; vai aprender boas pr&#225;ticas sobre como construir uma API utilizando c&#243;digo ECMAScript 2015 (aka ES6) e frameworks populares como Express, Passport, Apidoc, Mocha e muito mais. 
-			</p>
-		
-	
-		
-		
-			<p class="infoSection-texto">
-				
-O projeto ser&#225; integrado com banco de dados relacional atrav&#233;s do Sequelize.js e, para finalizar, ser&#225; constru&#237;da uma aplica&#231;&#227;o cliente web em formato SPA (Single Page Application) utilizando apenas o melhor do mais puro Vanilla JavaScript.
-			</p>
-		
-	
-	
-		<p class="infoSection-texto">
-			
-			
-			
-				
-					
-					<a class="conteudoDoLivro-link" href="/pages/sumario-apis-nodejs">veja o sumário completo</a>
-				
-			
-		</p>
+
+			<a class="conteudoDoLivro-link" href="/pages/sumario-apis-nodejs">veja o sumário completo</a>
 	
 </section>
 
 
-	
-		<section class="autoresDoLivro infoSection">
-	<h2 class="infoSection-titulo">
-		Autor
-	</h2>
-	
-	
-		<div class="autoresDoLivro-autor" itemprop="author" itemscope itemtype="http://schema.org/Person">
-			
-			<img class="autoresDoLivro-autor-foto" itemprop="image" src="//cdn.shopify.com/s/files/1/0155/7645/files/caio-ribeiro-pereira.png?4910820717078552127?v=2017-07-28" title="Foto de Caio Ribeiro Pereira"><!--
-			--><h3 class="autoresDoLivro-autor-nome" itemprop="name">
-			  Caio Ribeiro Pereira
-			</h3>
-			<p class="infoSection-texto autoresDoLivro-autor-descricao" itemprop="description">
-				Caio Ribeiro Pereira trabalha desde 2008 como Web Developer, j&#225; brincou muito com Java, PHP, Ruby e principalmente JavaScript! Formado em Sistemas de Informa&#231;&#227;o pela Universidade Cat&#243;lica de Santos, nos tempos livres escreve alguns post no seu blog Underground WebDev (udgwebdev.com), de vez enquando contribui no open-source em projetos como Moment.js, Sequelize.js, VanillaMasker, Sputlytics, DevFreeCasts, DevFreeBooks e outros do seu Github (github.com/caio-ribeiro-pereira), tamb&#233;m participa ativamente das comunidades Google Groups Meteor Brasil, Facebook Groups JavaScript Brazil, DevInSantos e NodeBR. Para saber mais sobre ele, acesse: crpwebdev.com
-			</p>
-		</div>
-	
-</section>
-
 		
 
 
-		<section class="infosAdicionaisDoLivro infoSection">
+<section class="infosAdicionaisDoLivro infoSection">
 	<h2 class="infoSection-titulo">
 		Dados do produto
 	</h2>
@@ -772,7 +426,7 @@ O projeto ser&#225; integrado com banco de dados relacional atrav&#233;s do Sequ
 			Número de páginas:
 		</dt>
 		<dd class="infosAdicionaisDoLivro-info-valor" itemprop="numberOfPages">
-			187
+			${ produto.paginas }
 		</dd>
 		
 		<dt class="infosAdicionaisDoLivro-info-titulo">
@@ -780,6 +434,12 @@ O projeto ser&#225; integrado com banco de dados relacional atrav&#233;s do Sequ
 		</dt>
 		<dd class="infosAdicionaisDoLivro-info-valor" itemprop="isbn">
 			978-85-5519-150-3
+		</dd>
+		<dt class="infosAdicionaisDoLivro-info-titulo">
+			Data de lançamento:
+		</dt>
+		<dd class="infosAdicionaisDoLivro-info-valor" itemprop="isbn">
+			 <fmt:formatDate pattern="dd/MM/yyyy" value="${ produto.dataLancamento.time}"></fmt:formatDate>
 		</dd>
 		
 		
@@ -799,14 +459,7 @@ O projeto ser&#225; integrado com banco de dados relacional atrav&#233;s do Sequ
 	</div>
 </section>
 
-	
 
-	
-	
-	
-	
-	
-	
 
 <section class="compartilhar infoSection">
     <h2 class="infoSection-titulo">Compartilhe!</h2>
@@ -816,9 +469,6 @@ O projeto ser&#225; integrado com banco de dados relacional atrav&#233;s do Sequ
  na @casadocodigo https://www.casadocodigo.com.br/products/livro-apis-nodejs" rel="nofollow" title="Compartilhe no Twitter" rel="nofollow" target="_blank">Compartilhe no Twitter</a>
 </section>
 	
-		
-
-
 
 <section class="recomendacoes">
 	<div class="infoSection" role="presentation">
@@ -856,21 +506,9 @@ O projeto ser&#225; integrado com banco de dados relacional atrav&#233;s do Sequ
 		</div>
 	</div>
 </section>
-<script type="text/javascript">
-(function() {
-	var links = document.getElementsByClassName("livroNaVitrine-link");
-	for (var i = 0; i < links.length; i++) {
-		links[i].addEventListener("click", function(event) {
-			ga('send', 'event', 'Recomendacao', this.title);
-		});
-	}
-})();
-</script>
 
 	
 </article>
-
-
 
 		<div class="buscaDoRodape container" role="presentation">
 	<form role="search"
